@@ -1,0 +1,14 @@
+Río de Janeiro,Brasil
+New York,USA
+Taiwan,China
+Melbourne,Australia
+Buenos Aires,Argentina
+Ankara,Turquía
+Marsella,Francia
+Madrid,España
+Milán,Italia
+Medellín,Colombia
+Cuzco,Perú
+Abuya,Nigeria
+CDMX,México
+Alejandría,Egipto

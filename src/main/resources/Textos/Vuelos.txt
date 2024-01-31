@@ -1,0 +1,78 @@
+AV101,Guayaquil,Rio de Janeiro,9,07:30,16:30,Boeing 737,450.50
+AV102,Guayaquil,New York,15,10:45,22:45,Airbus A320,850.75
+AV103,Guayaquil,Taiwan,20,13:15,09:15,Boeing 787,1100.60
+AV104,Guayaquil,Melbourne,12,15:30,03:30,Airbus A330,900.25
+AV105,Guayaquil,Buenos Aires,8,08:00,16:00,Embraer E190,420.30
+AV106,Guayaquil,Ankara,16,14:45,06:45,Boeing 777,720.90
+AV107,Guayaquil,Marsella,18,17:30,11:30,Airbus A321,820.40
+AV108,Guayaquil,Madrid,10,12:00,18:00,Boeing 737,500.20
+AV109,Guayaquil,Milan,22,09:15,07:15,Airbus A320,1100.60
+AV110,Guayaquil,Medellin,7,06:45,09:45,Boeing 787,300.75
+AV111,Guayaquil,Cuzco,13,11:30,20:30,Airbus A330,700.90
+AV112,Guayaquil,Abuja,14,16:15,05:15,Embraer E190,550.80
+AV113,Guayaquil,CDMX,11,18:00,03:00,Boeing 737,430.40
+AV114,Manta,Rio de Janeiro,14,08:30,22:30,Airbus A321,820.60
+AV115,Manta,New York,17,12:45,03:45,Boeing 777,900.75
+AV116,Manta,Taiwan,9,16:15,04:15,Boeing 787,650.40
+AV117,Manta,Melbourne,10,20:30,07:30,Embraer E190,480.30
+AV118,Manta,Buenos Aires,20,10:00,06:00,Airbus A320,950.50
+AV119,Manta,Ankara,8,07:15,13:15,Airbus A330,400.90
+AV120,Manta,Marsella,12,14:30,23:30,Boeing 737,670.20
+AV121,Manta,Madrid,15,18:45,09:45,Airbus A321,780.10
+AV122,Manta,Milan,18,09:00,23:00,Boeing 787,900.80
+AV123,Manta,Medellin,21,13:30,08:30,Embraer E190,1100.30
+AV124,Manta,Cuzco,11,16:45,23:45,Airbus A330,550.60
+AV125,Manta,Abuja,16,06:00,18:00,Boeing 777,850.75
+AV126,Manta,CDMX,14,10:15,23:15,Airbus A320,760.40
+AV127,Quito,Rio de Janeiro,19,11:30,07:30,Embraer E190,950.30
+AV128,Quito,New York,8,15:45,22:45,Boeing 737,430.20
+AV129,Quito,Taiwan,12,09:00,22:00,Airbus A330,780.50
+AV130,Quito,Melbourne,13,12:15,22:15,Airbus A320,850.75
+AV131,Quito,Buenos Aires,10,14:30,21:30,Boeing 787,600.80
+AV132,Quito,Ankara,16,17:45,01:45,Airbus A321,720.90
+AV133,Quito,Marsella,7,21:00,08:00,Boeing 787,500.40
+AV134,Quito,Madrid,18,05:30,16:30,Boeing 777,990.25
+AV135,Quito,Milan,21,08:45,18:45,Embraer E190,670.60
+AV136,Quito,Medellin,15,11:00,19:00,Airbus A330,550.80
+AV137,Quito,Cuzco,11,14:15,02:15,Airbus A320,720.40
+AV138,Quito,Abuja,14,18:30,01:30,Boeing 737,350.25
+AV139,Quito,CDMX,20,20:45,09:45,Airbus A330,900.90
+AV200,Rio de Janeiro,Guayaquil,9,07:30,16:30,Airbus A320,450.50
+AV201,New York,Guayaquil,15,10:45,22:45,Boeing 787,850.75
+AV202,Taiwan,Guayaquil,20,13:15,09:15,Airbus A330,1100.60
+AV203,Melbourne,Guayaquil,12,15:30,03:30,Embraer E190,900.25
+AV204,Buenos Aires,Guayaquil,8,08:00,16:00,Boeing 777,420.30
+AV205,Ankara,Guayaquil,16,14:45,06:45,Airbus A321,720.90
+AV206,Marsella,Guayaquil,18,17:30,11:30,Boeing 737,820.40
+AV207,Madrid,Guayaquil,10,12:00,18:00,Airbus A320,500.20
+AV208,Milan,Guayaquil,22,09:15,07:15,Boeing 787,1100.60
+AV209,Medellin,Guayaquil,7,06:45,09:45,Airbus A330,300.75
+AV210,Cuzco,Guayaquil,13,11:30,20:30,Boeing 777,700.90
+AV211,Abuja,Guayaquil,14,16:15,05:15,Embraer E190,550.80
+AV212,CDMX,Guayaquil,11,18:00,03:00,Airbus A321,430.40
+AV213,Rio de Janeiro,Manta,14,08:30,22:30,Airbus A320,820.60
+AV214,New York,Manta,17,12:45,03:45,Boeing 777,900.75
+AV215,Taiwan,Manta,9,16:15,04:15,Boeing 787,650.40
+AV216,Melbourne,Manta,10,20:30,07:30,Embraer E190,480.30
+AV217,Buenos Aires,Manta,20,10:00,06:00,Airbus A330,950.50
+AV218,Ankara,Manta,8,07:15,13:15,Airbus A320,400.90
+AV219,Marsella,Manta,12,14:30,23:30,Boeing 737,670.20
+AV220,Madrid,Manta,15,18:45,09:45,Airbus A321,780.10
+AV221,Milan,Manta,18,09:00,23:00,Boeing 787,900.80
+AV222,Medellin,Manta,21,13:30,08:30,Embraer E190,1100.30
+AV223,Cuzco,Manta,11,16:45,23:45,Airbus A330,550.60
+AV224,Abuja,Manta,16,06:00,18:00,Boeing 777,850.75
+AV225,CDMX,Manta,14,10:15,23:15,Airbus A320,760.40
+AV226,Rio de Janeiro,Quito,19,11:30,07:30,Embraer E190,950.30
+AV227,New York,Quito,8,15:45,22:45,Boeing 737,430.20
+AV228,Taiwan,Quito,12,09:00,22:00,Airbus A330,780.50
+AV229,Melbourne,Quito,13,12:15,22:15,Airbus A320,850.75
+AV230,Buenos Aires,Quito,10,14:30,21:30,Boeing 787,600.80
+AV231,Ankara,Quito,16,17:45,01:45,Airbus A321,720.90
+AV232,Marsella,Quito,7,21:00,08:00,Boeing 787,500.40
+AV233,Madrid,Quito,18,05:30,16:30,Boeing 777,990.25
+AV234,Milan,Quito,21,08:45,18:45,Embraer E190,670.60
+AV235,Medellin,Quito,15,11:00,19:00,Airbus A330,550.80
+AV236,Cuzco,Quito,11,14:15,02:15,Airbus A320,720.40
+AV237,Abuja,Quito,14,18:30,01:30,Boeing 737,350.25
+AV238,CDMX,Quito,20,20:45,09:45,Airbus A330,900.90

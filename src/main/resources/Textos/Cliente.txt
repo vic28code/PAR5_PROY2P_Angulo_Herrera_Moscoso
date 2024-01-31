@@ -1,0 +1,10 @@
+0912345678,Hilda,Angulo,hvangulo,ANGULO,M
+0923456789,Alejandro,Sornoza,alesvera,SORNOZA,H
+0934567890,Gustavo,Moscoso,gmoscoso,MOSCOSO,H
+0945678901,Cristhian,Herrera,crisherr,HERRERA,H
+0956789012,Rafael,Bonilla,rabonilla,BONILLA,H
+0967890123,Alexandra,Arias,alesaria,ARIAS,M
+0978901234,Veronica,Duarte,vealduar,DUARTE,M
+0989012345,Javier,Gutierrez,javaguti,GUTIERREZ,H
+0990123456,Adrian,Salamea,asalamea,SALAMEA,H
+0911122334,Astrid,Parra,astpguev,PARRA,M

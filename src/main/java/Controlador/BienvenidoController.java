@@ -16,6 +16,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -216,16 +219,23 @@ public class BienvenidoController implements Initializable {
         ListView<String> lv = new ListView<>();
         ObservableList<String> listaElementos = FXCollections.observableArrayList();
         try {
-            File file = new File("src/main/resources/Textos/Pagos.txt");
+            File file = new File("src/main/resources/Textos/reservas.txt");
             FileReader fw = new FileReader(file);
             BufferedReader br = new BufferedReader(fw);
             while ((info = br.readLine()) != null) {
                 String[] tokens = info.split(",");
-                Usuario u = InicioSesionController.usuarioSeleccionado;
-                String codigoReserva = tokens[1];
-                String datosUsuario = u.getNombre() + " " + u.getApellido();
-                String linea = codigoReserva + "-" + datosUsuario;
-                listaElementos.add(linea);
+                String codigoReserva = tokens[0];
+                String cedulaUsu = tokens[1];
+                ArrayList<Usuario> listUsu = InicioSesionController.ListaUsuarios;
+                for (Usuario u : listUsu) {
+                    if (u.getCedula().equals(cedulaUsu)) {
+                        String datosUsuario = u.getNombre() + " " + u.getApellido();
+                        String linea = codigoReserva + "-" + datosUsuario;
+                        listaElementos.add(linea);
+
+                    }
+                }
+
             }
             lv.setItems(listaElementos);
             rootpedido.getChildren().add(lv);
@@ -240,45 +250,77 @@ public class BienvenidoController implements Initializable {
     }
 
     public static void actualizar(ObservableList<String> listaElementos, ListView<String> lv) {
-        Thread dormir2 = new Thread(new Runnable() {
-            public void run() {
-                int a = 1;
-                while (a != 0) {
-                    for (int i = 5; i != 0; i--) {
-                        try {
-                            Thread.sleep(5000);
-                        } catch (InterruptedException ex) {
-                            ex.printStackTrace();
-                        }
-                        Platform.runLater(new Runnable() {
-                            public void run() {
-                                listaElementos.clear();
-                                try {
-                                    String info = null;
-                                    File file = new File("src/main/resources/Textos/Pagos.txt");
-                                    FileReader fw = new FileReader(file);
-                                    BufferedReader br = new BufferedReader(fw);
-                                    while ((info = br.readLine()) != null) {
-                                        String[] tokens = info.split(",");
-                                        Usuario u = InicioSesionController.usuarioSeleccionado;
-                                        String codigoReserva = tokens[1];
-                                        String datosUsuario = u.getNombre() + " " + u.getApellido();
-                                        String linea = codigoReserva + "-" + datosUsuario;
-                                        listaElementos.add(linea);
-                                    }
-                                    lv.setItems(listaElementos);
-                                } catch (Exception I) {
-                                    I.printStackTrace();
-                                }
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+        scheduler.scheduleAtFixedRate(() -> {
+            Platform.runLater(() -> {
+                try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/Textos/reservas.txt"))) {
+                    listaElementos.clear();
+                    String info;
+                    while ((info = br.readLine()) != null) {
+                        String[] tokens = info.split(",");
+                        String codigoReserva = tokens[0];
+                        String cedulaUsu = tokens[1];
+                        ArrayList<Usuario> listUsu = InicioSesionController.ListaUsuarios;
+                        for (Usuario u : listUsu) {
+                            if (u.getCedula().equals(cedulaUsu)) {
+                                String datosUsuario = u.getNombre() + " " + u.getApellido();
+                                String linea = codigoReserva + "-" + datosUsuario;
+                                listaElementos.add(linea);
                             }
-                        });
+                        }
+
                     }
+                    lv.setItems(listaElementos);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            }
-        });
-        dormir2.start();
+            });
+        },
+                 0, 5, TimeUnit.SECONDS
+        );
     }
 
+//    public static void actualizar(ObservableList<String> listaElementos, ListView<String> lv) {
+//        Thread dormir2 = new Thread(new Runnable() {
+//            public void run() {
+//                int a = 1;
+//                while (a != 0) {
+//                    for (int i = 5; i != 0; i--) {
+//                        try {
+//                            Thread.sleep(5000);
+//                        } catch (InterruptedException ex) {
+//                            ex.printStackTrace();
+//                        }
+//                        Platform.runLater(new Runnable() {
+//                            public void run() {
+//                                listaElementos.clear();
+//                                try {
+//                                    String info = null;
+//                                    File file = new File("src/main/resources/Textos/Pagos.txt");
+//                                    FileReader fw = new FileReader(file);
+//                                    BufferedReader br = new BufferedReader(fw);
+//                                    while ((info = br.readLine()) != null) {
+//                                        String[] tokens = info.split(",");
+//                                        Usuario u = InicioSesionController.usuarioSeleccionado;
+//                                        String codigoReserva = tokens[1];
+//                                        String datosUsuario = u.getNombre() + " " + u.getApellido();
+//                                        String linea = codigoReserva + "-" + datosUsuario;
+//                                        listaElementos.add(linea);
+//                                    }
+//                                    lv.setItems(listaElementos);
+//                                } catch (Exception I) {
+//                                    I.printStackTrace();
+//                                }
+//                            }
+//                        });
+//                    }
+//                }
+//            }
+//        });
+//        dormir2.start();
+//    }
     void CargarLista() {
         try (BufferedReader bfr = new BufferedReader(new FileReader(new File("src/main/resources/Textos/promociones.txt")))) {
             String linea = bfr.readLine();

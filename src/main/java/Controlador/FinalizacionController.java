@@ -36,7 +36,7 @@ public class FinalizacionController implements Initializable {
     private VBox root;
     @FXML
     private HBox contenedorLabel;
-    public static Label labelCerrar = new Label("hi");
+    public static Label labelCerrar = new Label("Cerrando");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -74,6 +74,27 @@ public class FinalizacionController implements Initializable {
         return codigo;
     }
 
+//    void GenerarReserva() {
+//        reserva rs = new reserva(CodigoReserva, InicioSesionController.usuarioSeleccionado.getCedula(), ReservarVueloController.LugarSalida, ReservarVueloController.LugarLlegada, ReservarVueloController.fecha_partida,
+//                ReservarVueloController.fecha_Regreso, ReservarVueloController.numeroP, ReservarVuelo2Controller.vueloseleccionado.getCodigoVuelo(), ReservarVuelo4Controller.vueloseleccionado2.getCodigoVuelo(), ReservarVuelo3Controller.TarifaViaje1.getTipo(),
+//                ReservarVuelo5Controller.TarifaViaje2.getTipo());
+//        pago = rs.GenerarTransaccion(generarCodigoAzar(), CodigoReserva, PagoController.subtotal1 + PagoController.subtotal2, PagoController.Descuento, PagoController.tipo, PagoController.Total);
+//
+//        try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("src/main/resources/ReservasSerializadas/" + rs.getCodigoReserva() + ".bin"))) {
+//            salida.writeObject(rs);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/reservas.txt"));
+//                writer.write(rs.getCodigoReserva() + "," + rs.getCedulaCliente() + "," + rs.getCiudadOrigen() + "," + rs.getCiudadDestino() + "," + rs.getFechaSalida() + "," + String.valueOf(rs.getNumeroPasajeros()) + "," + String.valueOf(rs.getNumeroVuelo()) + "," + String.valueOf(rs.getNumeroVueloRegreso()) + "," + rs.getTipoTarifaIda() + rs.getTipoTarifaRegreso() + "\n");
+//                writer.close();
+//            } catch (Exception a) {
+//
+//            }
+//
+//        }
+//    }
     void GenerarReserva() {
         reserva rs = new reserva(CodigoReserva, InicioSesionController.usuarioSeleccionado.getCedula(), ReservarVueloController.LugarSalida, ReservarVueloController.LugarLlegada, ReservarVueloController.fecha_partida,
                 ReservarVueloController.fecha_Regreso, ReservarVueloController.numeroP, ReservarVuelo2Controller.vueloseleccionado.getCodigoVuelo(), ReservarVuelo4Controller.vueloseleccionado2.getCodigoVuelo(), ReservarVuelo3Controller.TarifaViaje1.getTipo(),
@@ -86,21 +107,35 @@ public class FinalizacionController implements Initializable {
             e.printStackTrace();
         } finally {
             try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/reservas.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/reservas.txt", true)); // El segundo parámetro true indica que se agregará al final del archivo
                 writer.write(rs.getCodigoReserva() + "," + rs.getCedulaCliente() + "," + rs.getCiudadOrigen() + "," + rs.getCiudadDestino() + "," + rs.getFechaSalida() + "," + String.valueOf(rs.getNumeroPasajeros()) + "," + String.valueOf(rs.getNumeroVuelo()) + "," + String.valueOf(rs.getNumeroVueloRegreso()) + "," + rs.getTipoTarifaIda() + rs.getTipoTarifaRegreso() + "\n");
                 writer.close();
             } catch (Exception a) {
-
+                a.printStackTrace();
             }
-
         }
     }
 
+//    void EscribirPago() {
+//        try {
+//            // Crear un BufferedWriter para escribir en el archivo
+//            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/Pagos.txt"));
+//            writer.write(pago.getIdpago() + "," + pago.getCodigoReserva() + "," + pago.getTotalRserva() + "," + pago.getDescuento() + "," + pago.getFormaPago() + "," + pago.getTotalPagar());
+//
+//            writer.close();
+//
+//        } catch (IOException e) {
+//            System.err.println("Error al escribir en el archivo: " + e.getMessage());
+//        } finally {
+//
+//        }
+//
+//    }
     void EscribirPago() {
         try {
             // Crear un BufferedWriter para escribir en el archivo
-            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/Pagos.txt"));
-            writer.write(pago.getIdpago() + "," + pago.getCodigoReserva() + "," + pago.getTotalRserva() + "," + pago.getDescuento() + "," + pago.getFormaPago() + "," + pago.getTotalPagar());
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Textos/Pagos.txt", true)); // El segundo parámetro true indica que se agregará al final del archivo
+            writer.write(pago.getIdpago() + "," + pago.getCodigoReserva() + "," + pago.getTotalRserva() + "," + pago.getDescuento() + "," + pago.getFormaPago() + "," + pago.getTotalPagar() + "\n");
 
             writer.close();
 
@@ -109,7 +144,6 @@ public class FinalizacionController implements Initializable {
         } finally {
 
         }
-
     }
 
 }

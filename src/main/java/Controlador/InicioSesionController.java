@@ -35,7 +35,7 @@ import modelo.Sexo;
  */
 public class InicioSesionController implements Initializable {
 
-    private ArrayList<Usuario> ListaUsuarios = new ArrayList<>();
+    public static ArrayList<Usuario> ListaUsuarios = IniciarUsuarios();
     public static Usuario usuarioSeleccionado;
     @FXML
     TextField usuario;
@@ -59,7 +59,7 @@ public class InicioSesionController implements Initializable {
 
     }
 
-    private ArrayList<Usuario> IniciarUsuarios() { //Metodo que carga los usuarios en el sistema
+    private static ArrayList<Usuario> IniciarUsuarios() { //Metodo que carga los usuarios en el sistema
         ArrayList<Usuario> listaUsu = new ArrayList<>();
         try {
             File fl = new File("src/main/resources/Textos/Cliente.txt");

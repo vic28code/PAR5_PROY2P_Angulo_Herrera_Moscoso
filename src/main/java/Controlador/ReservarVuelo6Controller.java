@@ -69,10 +69,13 @@ public class ReservarVuelo6Controller implements Initializable {
             VBox root = new VBox();
             HBox paraBoton = new HBox();
             Button cerrar = new Button();
-            cerrar.setMinWidth(100);
+            cerrar.setMinWidth(50);
             cerrar.setMinHeight(50);
-            cerrar.setMaxWidth(200);
-            cerrar.setMaxHeight(100);
+            cerrar.setMaxWidth(50);
+            cerrar.setMaxHeight(50);
+            cerrar.setText("Cerrar");
+            cerrar.setStyle("-fx-font-weight: bold; -fx-text-fill: black;");
+
             cerrar.setOnAction(event -> {
                 st.close();
             });
@@ -122,10 +125,12 @@ public class ReservarVuelo6Controller implements Initializable {
             VBox root = new VBox();
             HBox paraBoton = new HBox();
             Button cerrar = new Button();
-            cerrar.setMinWidth(100);
+            cerrar.setMinWidth(50);
             cerrar.setMinHeight(50);
-            cerrar.setMaxWidth(200);
-            cerrar.setMaxHeight(100);
+            cerrar.setMaxWidth(50);
+            cerrar.setMaxHeight(50);
+            cerrar.setText("Cerrar");
+
             cerrar.setOnAction(event -> {
                 st.close();
             });

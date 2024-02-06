@@ -76,7 +76,9 @@ public class PagoController implements Initializable {
                 if (grupoOpciones.getSelectedToggle() == rb1) {
                     tipo = 'E';
                     rootTarjeta.getChildren().clear();
-                    Label mensaje = new Label("Estimado cliente, tienes 24 horas para acercarte a realizar el\npago. De lo contrario, la reserva se anulará.");
+                    Label mensaje = new Label("Estimado cliente, tienes 24 horas para acercarte a realizar el pago. De lo contrario, la reserva se anulará.");
+                    mensaje.setWrapText(true);
+                    mensaje.setPrefWidth(200);
                     mensaje.setStyle("-fx-font-weight: bold;");
                     rootTarjeta.getChildren().add(mensaje);
                     PagoTotal.setText(String.valueOf(Total));
@@ -116,6 +118,7 @@ public class PagoController implements Initializable {
                 PagoTotal.setText(String.valueOf(Total));
 
             } else {
+              
 
             }
 
@@ -141,7 +144,7 @@ public class PagoController implements Initializable {
                 actual = (Stage) ResumenPedido.getScene().getWindow();
                 Scene sc = new Scene(App.loadFXML("/Vistas/Finalizacion"));
                 actual.setScene(sc);
-                InicioSesionController.iniciarcerrar(FinalizacionController.labelCerrar, actual);
+                InicioSesionController.cerrar(FinalizacionController.labelCerrar, actual);
 
             }
         } else {
@@ -149,7 +152,7 @@ public class PagoController implements Initializable {
                 Stage actual = (Stage) ResumenPedido.getScene().getWindow();
                 Scene sc = new Scene(App.loadFXML("/Vistas/Finalizacion"));
                 actual.setScene(sc);
-                InicioSesionController.iniciarcerrar(FinalizacionController.labelCerrar, actual);
+                InicioSesionController.cerrar(FinalizacionController.labelCerrar, actual);
 
             }
 
@@ -163,7 +166,21 @@ public class PagoController implements Initializable {
         Stage cancelacion = new Stage();
         VBox root = new VBox();
         Button confirmar = new Button();
+        confirmar.setMinWidth(100);
+        confirmar.setMinHeight(50);
+        confirmar.setMaxWidth(100);
+        confirmar.setMaxHeight(50);
+        confirmar.setText("Si");
+        confirmar.setStyle("-fx-font-weight: bold; -fx-text-fill: black;");
+
         Button cancelar = new Button();
+        cancelar.setMinWidth(100);
+        cancelar.setMinHeight(50);
+        cancelar.setMaxWidth(100);
+        cancelar.setMaxHeight(50);
+        cancelar.setText("No");
+        cancelar.setStyle("-fx-font-weight: bold; -fx-text-fill: black;");
+
         HBox botones = new HBox();
         Label label = new Label("Seguro quieres cancelar¿?");
         root.setAlignment(Pos.CENTER);
